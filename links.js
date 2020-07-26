@@ -17,6 +17,20 @@ const form = document.querySelector('#add-link-form');
 const updateForm = document.querySelector('#update-link-form')
 var modalDocument = null
 
+//show filter
+function showFilter() {
+  console.log('trying')
+  var filterWrapper = document.getElementById("filter").style.display
+  if (filterWrapper == "block") {
+    document.getElementById("filter").style.display = "none"
+    document.getElementById("filterButton").className = ""
+  }
+  else {
+    document.getElementById("filter").style.display = "block"
+    document.getElementById("filterButton").className = "active"
+  }
+}
+
 //close modals
 function closeModal() {
   document.getElementById("myModal").style.display = "none"
