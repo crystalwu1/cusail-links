@@ -19,6 +19,7 @@ function signIn() {
   firebase.auth().signInWithPopup(provider)
     .then(() => {
       window.location.assign("index.html")
+      console.log(user)
     })
     .catch(error => {
       console.error(error)
@@ -27,7 +28,7 @@ function signIn() {
 
 function signOut() {
   firebase.auth().signOut().then(function () {
-    // Sign-out successful.
+    window.location.assign("login.html")
   }).catch(function (error) {
     // An error happened.
   });
