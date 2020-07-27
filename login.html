@@ -3,6 +3,7 @@
 <head>
   <title>The Port | CUSail </title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="login.css">
   <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.15/firebase-auth.js"></script>
@@ -12,19 +13,21 @@
 </head>
 
 <body>
-  <div class="login">
-    <h3>WELCOME TO</h3>
-    <h2>THE PORT</h2>
-    <h3>a central place for <span style="color: #b31b1b">autonomous</span> <span style="color: #001436">sailboaty</span>
-      <span style="color: #65c8d0">things</span> .</h3>
-    <button onclick="signIn()">SIGN IN</button>
+  <div class="login-wrapper">
+    <div class="login">
+      <h3>WELCOME TO</h3>
+      <h2 class="gradient">THE PORT</h2>
+      <h3>a central place for autonomous sailboaty things. </h3>
+      <button onclick="signIn()">ENTER</button>
+    </div>
+
+    <div class="footer">
+      <img src="cusail16.png">
+      <br><br>
+      With ♥ from BOps.
+    </div>
   </div>
 
-  <div class="footer">
-    <img src="cusail16.png">
-    <br><br>
-    With ♥ from BOps.
-  </div>
 
 
   <script src="login.js"></script>
