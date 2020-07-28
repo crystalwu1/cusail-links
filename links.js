@@ -207,7 +207,8 @@ function filterSelection(tag) {
       })
     })
   }
-  catchUser();
+  // catchUser();
+  console.log(firebase.auth().user);
 }
 
 //display all
@@ -226,11 +227,11 @@ updateForm.addEventListener('submit', (e) => {
 })
 
 //links page inaccessible to non-signed in users
-function catchUser() {
-  if (firebase.auth().user) {
+// function catchUser() {
+//   if (firebase.auth().user) {
 
-  } else {
-    alert("Not signed in")
-    window.location.assign("login.html")
-  }
-}
+//   } else {
+//     alert("Not signed in")
+//     window.location.assign("login.html")
+//   }
+// }
