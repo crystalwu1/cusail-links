@@ -30,6 +30,7 @@ function signIn() {
 
 function signOut() {
   firebase.auth().signOut()
+  window.location.assign("login.html")
 }
 
 firebase.auth().onAuthStateChanged((user) => {
@@ -37,7 +38,7 @@ firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     console.log("signed in", user)
   } else {
-    window.location.assign("login.html")
+    // window.location.assign("login.html")
   }
 })
 
