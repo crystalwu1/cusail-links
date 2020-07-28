@@ -207,8 +207,6 @@ function filterSelection(tag) {
       })
     })
   }
-  // catchUser();
-  console.log(firebase.auth().user);
 }
 
 //display all

@@ -21,7 +21,7 @@ function signIn() {
       window.location.assign("index.html")
       //display all
       filterSelection('all')
-      console.log(firebase.auth().user)
+      // console.log(firebase.auth().user)
     })
     .catch(error => {
       // window.location.assign("login.html")
@@ -36,3 +36,7 @@ function signOut() {
     window.location.assign("login.html")
   });
 }
+
+firebase.auth().onAuthStateChanged((user) => {
+  console.log(user);
+})
