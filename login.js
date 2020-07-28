@@ -24,7 +24,7 @@ function signIn() {
       console.log(user)
     })
     .catch(error => {
-      window.location.assign("login.html")
+      // window.location.assign("login.html")
       console.error(error)
     })
 }
