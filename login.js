@@ -9,7 +9,7 @@ var firebaseConfig = {
   appId: "1:782612915461:web:5df3976372f0736f2f436c",
   measurementId: "G-DLH92W1HM0"
 };
-firebase.initializeApp(firebaseConfig);
+// firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
 function signIn() {
@@ -34,20 +34,9 @@ function signOut() {
 }
 
 firebase.auth().onAuthStateChanged((user) => {
-  console.log(user);
   if (user) {
     console.log("signed in", user)
+    window.location.assign("index.html")
   } else {
-    // window.location.assign("login.html")
   }
 })
-
-//links page inaccessible to non-signed in users
-// function catchUser() {
-//   if (firebase.auth().user) {
-
-//   } else {
-//     alert("Not signed in")
-//     window.location.assign("login.html")
-//   }
-// }

@@ -19,7 +19,6 @@ var modalDocument = null
 
 //show filter
 function showFilter() {
-  console.log('trying')
   var filterWrapper = document.getElementById("filter").style.display
   if (filterWrapper == "block") {
     document.getElementById("filter").style.display = "none"
