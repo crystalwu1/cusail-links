@@ -9,8 +9,8 @@ var firebaseConfig = {
   appId: "1:782612915461:web:5df3976372f0736f2f436c",
   measurementId: "G-DLH92W1HM0"
 };
-firebase.initializeApp(firebaseConfig);
-var db = firebase.firestore();
+// firebase.initializeApp(firebaseConfig);
+// var db = firebase.firestore();
 
 function signIn() {
   var provider = new firebase.auth.GoogleAuthProvider();
@@ -19,9 +19,12 @@ function signIn() {
   firebase.auth().signInWithPopup(provider)
     .then(() => {
       window.location.assign("index.html")
+      //display all
+      filterSelection('all')
       console.log(user)
     })
     .catch(error => {
+      window.location.assign("login.html")
       console.error(error)
     })
 }
@@ -30,6 +33,6 @@ function signOut() {
   firebase.auth().signOut().then(function () {
     window.location.assign("login.html")
   }).catch(function (error) {
-    // An error happened.
+    window.location.assign("login.html")
   });
 }

@@ -207,6 +207,7 @@ function filterSelection(tag) {
       })
     })
   }
+  catchUser();
 }
 
 //display all
@@ -223,3 +224,13 @@ updateForm.addEventListener('submit', (e) => {
   e.preventDefault();
   lookBeforeYouLeap("update", "shortcut", form.shortcut.value);
 })
+
+//links page inaccessible to non-signed in users
+function catchUser() {
+  if (firebase.auth().user) {
+
+  } else {
+    alert("Not signed in")
+    window.location.assign("login.html")
+  }
+}
