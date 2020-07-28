@@ -21,7 +21,7 @@ function signIn() {
       window.location.assign("index.html")
       //display all
       filterSelection('all')
-      console.log(user)
+      console.log(firebase.auth().user)
     })
     .catch(error => {
       // window.location.assign("login.html")
