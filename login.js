@@ -9,8 +9,8 @@ var firebaseConfig = {
   appId: "1:782612915461:web:5df3976372f0736f2f436c",
   measurementId: "G-DLH92W1HM0"
 };
-// firebase.initializeApp(firebaseConfig);
-// var db = firebase.firestore();
+firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore();
 
 function signIn() {
   var provider = new firebase.auth.GoogleAuthProvider();
