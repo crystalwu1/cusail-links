@@ -229,24 +229,23 @@ function signIn() {
 
   firebase.auth().signInWithPopup(provider)
     .then(() => {
-      window.location.assign("index.html")
+      // window.location.assign("index.html")
       //display all
       filterSelection('all')
     })
     .catch(error => {
-      window.location.assign("login.html")
+      // window.location.assign("login.html")
       console.error(error)
     })
 }
 
 function signOut() {
   firebase.auth().signOut()
-  window.location.assign("login.html")
+  // window.location.assign("login.html")
 }
 
 firebase.auth().onAuthStateChanged((user) => {
-  console.log("v2.2")
-  console.log("signed in", user);
+  console.log("v2.3")
 
   if (user) {
 
@@ -255,10 +254,8 @@ firebase.auth().onAuthStateChanged((user) => {
 
     var ref = db.collection("users").doc(user.id);
     ref.get().then(function (doc) {
-
       if (doc.exists) {
         console.log("Document data:", doc.data());
-
       } else {
         db.collection('users').doc(user.id).set({
           id: user.id,
@@ -271,7 +268,6 @@ firebase.auth().onAuthStateChanged((user) => {
 
   } else {
     console.log("signed out");
-
-    // window.location.assign("login.html")
+    window.location.assign("login.html")
   }
 })
