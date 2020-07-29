@@ -1,0 +1,283 @@
+:root {
+    --light:#FCF8F8;
+    --med: #F6EFEF;
+    --dark: #BCB0B0;
+    --accent: #77656B;
+}
+
+body{
+    background: var(--med);
+    font-family: 'Open Sans';
+    margin: 0;
+}
+
+.wrapper {
+    padding: 5%;
+    padding-top: 2%;
+}
+
+.header {
+    width: 100%;
+    padding-left: 2%;
+}
+
+h2{
+    font-size: 40px;
+    text-align: left;
+    font-weight: 800;
+    margin-block-end: 0;
+    text-shadow: 3px 3px 5px rgba(63, 36, 36, 0.2);;
+}
+
+h3{
+    text-align: left;
+    font-weight: normal;
+    margin-block-start: 0;
+    font-size: 15px;
+    color: var(--accent)
+}
+
+.login {
+    width: 100%;
+    height: auto;
+    margin-top: 15%;
+    margin-bottom: auto;
+}
+
+.login button {
+    width: 14%;
+    margin-left: 43%;
+    margin-top: 5%;
+}
+
+.login h2, .login h3{
+    text-align: center;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    width: 100%
+}
+
+
+.header button{
+    position: absolute;
+    margin-left: 80%;
+    margin-top: 1%;
+}
+
+p, a{
+    font-size: 15px;
+}
+
+a {
+    color: var(--dark)
+}
+
+.content{
+    background:white;
+    margin-top: 5%;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px rgba(63, 36, 36, 0.2);
+    overflow-x:auto;
+
+}
+
+button {
+    background: var(--dark);
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(63, 36, 36, 0.2);
+    min-width: 45px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 0.05em;
+    margin-right: 10px
+}
+
+button:hover {
+    background: var(--accent);
+    transition: all ease 0.2s;
+    cursor: pointer;
+}
+
+button img{
+    height: 25px;
+    width: auto
+}
+
+input, select{
+    background: var(--med);
+    border-radius: 5px;
+    width: 100%
+}
+
+input, select, button{
+    border: none;
+    height: 45px;
+    padding: 10px;
+}
+
+.modal-content input, select{
+    margin-right:10px;
+}
+
+select{
+    color: var(--dark);
+}
+
+::placeholder {
+    color: var(--dark);
+    font-size: 15px;
+}
+
+input:focus{
+    outline: none;
+    border-bottom: 5px solid var(--accent);
+    padding-bottom: 5px;
+    transition: all ease 0.2s;
+}
+
+table {
+    margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+    word-wrap: break-word;
+    overflow-x:auto;
+    table-layout: fixed;
+}
+
+table, th, td {
+    font-size: 15px;
+}
+
+tr {
+    height:75px;
+}
+
+tr:nth-child(even){
+    background: var(--light);
+}
+
+thead {
+    font-weight: 800;
+}
+
+table h1{
+    font-size: 15px;
+}
+
+.filter {
+    height: 30px;
+    border-radius: 50px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 20px;
+    box-shadow: none;
+    /* display: none; */
+}
+
+.tag-table{
+    background: var(--dark);
+    border: none;
+    font-weight: bold;
+    color: white;
+    height: 30px;
+    border-radius: 50px;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    font-size: 13.33333px;
+    display: inline-block;
+    box-sizing:border-box;
+}
+
+.filter-wrapper{
+    padding-left: 15px;
+}
+
+.active{
+    background: var(--accent);
+}
+
+.bops {
+    background: #001436;
+}
+
+.nav {
+    background: #65c8d0;
+}
+
+.mech {
+    background: #b31b1b;
+}   
+
+.name {
+    width: 15%;
+}
+
+.shortcut {
+    width: 17%;
+}
+
+.link {
+    width: 40%;
+}
+
+.tag {
+    width: 15%;
+}
+
+.action {
+    width: 5%
+}
+
+td {
+    padding-top: 0px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.icon {
+    padding:5px;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+.modal-content {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+    border-radius: 20px;
+}
+
+.close {
+    color: var(--dark);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+
+.footer{
+    text-align: center;
+    font-size: 12px;
+    margin-top: 5%;
+}

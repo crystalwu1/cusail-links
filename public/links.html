@@ -1,0 +1,122 @@
+<html>
+
+<head>
+  <title>The Port | CUSail </title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15/firebase-auth.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <link rel="shortcut icon" type="image/png" href="cusail128.png" />
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <div class="header">
+      <button onclick="signOut()"> SIGN OUT </button>
+      <h2>THE PORT</h2>
+      <h3>a central place for autonomous sailboaty things.</h3>
+    </div>
+
+    <div class="content">
+
+      <!-- <form id="add-link-form">
+        <input class="name" type="text" name="name" placeholder="Name">
+        <input class="shortcut" type="text" name="shortcut" placeholder="Shortcut (one word)">
+        <input class="link" type="text" name="link" placeholder="Link">
+        <select class="tag" name="tag">
+          <option value=" "> Tag </option>
+          <option value="General"> General </option>
+          <option value="Mech"> Mech </option>
+          <option value="Nav"> Nav </option>
+          <option value="BOps"> BOps </option>
+        </select>
+        <button> ADD </button>
+      </form> -->
+
+      <div class="filter-wrapper" id="filter">
+        <button class="filter" onclick="filterSelection('all')" id="all"> All</button>
+        <button class="filter" onclick="filterSelection('General')" id="General"> General </button>
+        <button class="filter mech" onclick="filterSelection('Mech')" id="Mech"> Mech </button>
+        <button class="filter nav" onclick="filterSelection('Nav')" id="Nav"> Nav </button>
+        <button class="filter bops" onclick="filterSelection('BOps')" id="BOps"> BOps </button>
+      </div>
+
+      <table>
+        <col class="name">
+        <col class="shortcut">
+        <col class="link">
+        <col class="tag">
+        <col class="action">
+        <col class="action">
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Shortcut</td>
+            <td>Link</td>
+            <td>Tag</td>
+            <!-- <td><button onclick="showFilter()" id="filterButton">F</button></td> -->
+            <td></td>
+          </tr>
+          <tr>
+            <form id="add-link-form">
+              <td> <input type="text" name="name" placeholder="Name"> </td>
+              <td> <input type="text" name="shortcut" placeholder="Shortcut (one word)"></td>
+              <td> <input type="text" name="link" placeholder="Link"></td>
+              <td>
+                <select name="tag">
+                  <option value=" "> Tag </option>
+                  <option value="General"> General </option>
+                  <option value="Mech"> Mech </option>
+                  <option value="Nav"> Nav </option>
+                  <option value="BOps"> BOps </option>
+                </select>
+              </td>
+              <td></td>
+              <td class="icon">
+                <button> + </button>
+              </td>
+            </form>
+          </tr>
+        </thead>
+        <tbody id="linktable">
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <img src="cusail16.png">
+      <br><br>
+      With ♥ from BOps.
+    </div>
+
+  </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content" id="modal-content">
+      <p id="modal-id"></p>
+      <p>Type in new values. Leaving a field blank will leave the current value unchanged.</p>
+      <span class="close" onclick="closeModal()">&times;</span>
+      <form id="update-link-form">
+        <input class="name" type="text" name="name" id="update-name" placeholder="Name">
+        <input class="shortcut" type="text" name="shortcut" id="update-shortcut" placeholder="Shortcut (one word)">
+        <input class="link" type="text" name="link" id="update-link" placeholder="Link">
+        <select class="tag" name="tag" id="update-tag">
+          <option value=" "> Tag </option>
+          <option value="General"> General </option>
+          <option value="Mech"> Mech </option>
+          <option value="Nav"> Nav </option>
+          <option value="BOps"> BOps </option>
+        </select>
+        <button> Add </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="links.js"></script>
+  <script src="login.js"></script>
+</body>
+
+</html>
