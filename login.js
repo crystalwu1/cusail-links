@@ -35,8 +35,8 @@ function signOut() {
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    console.log("signed in", user)
-    window.location.assign("index.html")
+    window.location.assign("index.html");
+    console.log("signed in", user);
   } else {
     console.log("signed out");
 
