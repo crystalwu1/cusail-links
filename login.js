@@ -12,3 +12,54 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
+function signIn() {
+  var provider = new firebase.auth.GoogleAuthProvider();
+  provider.addScope("https://www.googleapis.com/auth/userinfo.email");
+
+  firebase.auth().signInWithPopup(provider)
+    .then(() => {
+      window.location.assign("index.html")
+      //display all
+      filterSelection('all')
+    })
+    .catch(error => {
+      // window.location.assign("login.html")
+      console.error(error)
+    })
+}
+
+function signOut() {
+  firebase.auth().signOut()
+  // window.location.assign("login.html")
+}
+
+firebase.auth().onAuthStateChanged((user) => {
+  console.log("v2.2")
+  console.log("signed in", user);
+
+  if (user) {
+
+    window.location.assign("index.html");
+    console.log("signed in", user);
+
+    var ref = db.collection("users").doc(user.id);
+    ref.get().then(function (doc) {
+
+      if (doc.exists) {
+        console.log("Document data:", doc.data());
+
+      } else {
+        db.collection('users').doc(user.id).set({
+          id: user.id,
+          member: false
+        })
+      }
+    }).catch(function (error) {
+      console.log("Error getting document:", error);
+    });
+
+  } else {
+    console.log("signed out");
+    window.location.assign("login.html")
+  }
+})
