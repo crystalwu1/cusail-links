@@ -37,6 +37,23 @@ firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     window.location.assign("index.html");
     console.log("signed in", user);
+
+    var ref = db.collection("users").doc(user.id);
+    ref.get().then(function (doc) {
+
+      if (doc.exists) {
+        console.log("Document data:", doc.data());
+
+      } else {
+        db.collection('users').doc(user.id).set({
+          id: user.id,
+          member: false
+        })
+      }
+    }).catch(function (error) {
+      console.log("Error getting document:", error);
+    });
+
   } else {
     console.log("signed out");
 
